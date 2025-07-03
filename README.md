@@ -4,7 +4,6 @@
 
 This project aims to create a **Real-Time Communication System** that leverages **Artificial Intelligence** to aid specially-abled individuals in expressing themselves effectively. The system converts visual gestures into text or speech, providing a meaningful and accessible way for users with speech or hearing impairments to communicate with others in real-time.
 
----
 
 ## 🧠 Features
 
@@ -16,18 +15,16 @@ This project aims to create a **Real-Time Communication System** that leverages 
 - 💡 Simple and intuitive user interface
 - 🧑‍🦽 Designed with accessibility in mind
 
----
 
 ## 🛠️ Technologies Used
 
-- **Python 3.x**
-- **TensorFlow / Keras** – Deep learning for gesture recognition
-- **OpenCV** – Real-time video processing
-- **NumPy** – Data manipulation
-- **Pyttsx3 / gTTS** – Text-to-speech conversion
-- **Tkinter / Flask** (optional) – GUI / Web interface
+**Python 3.x**
+**TensorFlow / Keras** – Deep learning for gesture recognition
+**OpenCV** – Real-time video processing
+**NumPy** – Data manipulation
+**Pyttsx3 / gTTS** – Text-to-speech conversion
+**Tkinter / Flask** (optional) – GUI / Web interface
 
----
 
 ## 🗂️ Dataset
 
@@ -35,7 +32,6 @@ This project aims to create a **Real-Time Communication System** that leverages 
 - The dataset is structured into folders labeled by gesture name.
 - Preprocessed and augmented to enhance model accuracy.
 
----
 
 ## 🚀 How to Run the Project
 
@@ -63,15 +59,12 @@ This project aims to create a **Real-Time Communication System** that leverages 
    python app.py
    ```
 
----
-
 ## 🧪 Model Training
 
 * CNN-based architecture used for classifying hand gestures.
 * Achieved high accuracy with augmented data and optimized layers.
 * Model saved as `.h5` file for deployment.
 
----
 ## ⚙️ How It Works
 
 The **Real-Time Communication System Powered by AI** enables specially-abled individuals to communicate using hand gestures, which are recognized by an AI model and converted into text or speech in real-time.
@@ -107,7 +100,6 @@ This system is ideal for:
 * Educational institutions and special schools
 * Smart accessibility tools in hospitals or public spaces
 
----
 
 ## 📈 Future Enhancements
 
