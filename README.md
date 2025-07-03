@@ -68,8 +68,7 @@ This project aims to create a **Real-Time Communication System** that leverages 
    - The output text is passed to a Text-to-Speech (TTS) engine like `pyttsx3` or `gTTS`.
    - The system plays the generated audio to "speak" the user's gesture.
 
-### 📌 Example:
-- A user shows the gesture for “Thank You”.
-- The model recognizes it, displays **“Thank You”** on the screen, and speaks it aloud.
+### **OUTPUT**
+![Gesture Recognition Demo](output/a.png)
 
 
