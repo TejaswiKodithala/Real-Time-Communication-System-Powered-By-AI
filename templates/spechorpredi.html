@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Service</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/spechorpredi.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+ <!-- Header Section -->
+<header id="header" class="header">
+    <h1 class="sitename">MAST</h1>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/index">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Title Section -->
+    <div class="page-title">
+      <h1>Welcome to Our AI-Powered Services</h1>
+      <p>Choose a service to get started with seamless communication solutions.</p>
+    </div>
+
+    <!-- Service Selection -->
+    <div class="service-container">
+      <div class="service-card">
+        <i class="bi bi-mic service-icon"></i>
+        <h2>Speech Conversion</h2>
+        <p>Convert your speech into text with high accuracy and real-time processing.</p>
+        <a href="/speech" class="btn" target="_blank">Get Started</a>
+      </div>
+      <div class="service-card">
+        <i class="bi bi-hand-thumbs-up service-icon"></i>
+        <h2>Sign Prediction</h2>
+        <p>Upload your gestures to predict their meaning instantly.</p>
+        <a href="/sign" class="btn" target="_blank">Get Started</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

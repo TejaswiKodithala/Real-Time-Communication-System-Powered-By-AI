@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL and Gesture Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/imgpred.css') }}">
+</head>
+<body>
+    <header id="header" class="header">
+        <h1 class="sitename">MAST</h1>
+      </header>
+    <div class="container">
+         <!-- Back Button -->
+         <a href="/sign" class="back-btn" >
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+        <h1>ASL and Gesture Prediction using Image</h1>
+        <p>upoad an image of sign language and know what it is</p>
+        <br><br>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for="model_type">Select Model:</label>
+            <select id="model_type" name="model_type">
+                <option value="asl">ASL</option>
+                <option value="gesture">Gesture</option>
+            </select>
+            <br><br>
+            <label for="file">Upload Image:</label>
+            <input type="file" id="file" name="file" required>
+            <br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="predictionResult">
+            <h2>Prediction: </h2>
+            <p id="prediction"></p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
+
+        // Get the model type and file input values
+        const modelType = document.getElementById('model_type').value;
+        const fileInput = document.getElementById('file');
+        
+        // Create a FormData object
+        const formData = new FormData();
+        formData.append('model_type', modelType);
+        formData.append('file', fileInput.files[0]);
+
+        // Send the data to the Flask backend
+        fetch('/predict', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.prediction) {
+                document.getElementById('prediction').textContent = data.prediction;
+            } else {
+                document.getElementById('prediction').textContent = 'Error: ' + data.error;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('prediction').textContent = 'Error occurred during prediction';
+        });
+    });
+
+    </script>
+</body>
+</html>

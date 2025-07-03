@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL and Gesture Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/imgpred.css') }}">
+</head>
+<body>
+    <header id="header" class="header">
+        <h1 class="sitename">MAST</h1>
+    </header>
+    <div class="container">
+        <!-- Back Button -->
+        <a href="/sign" class="back-btn">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+        <h1>ASL and Gesture Prediction using Live Camera</h1>
+        <p>Allow access to your camera and make a gesture for prediction</p>
+        
+        <!-- Model Selection -->
+        <div id="model-selection">
+            <label for="model_type">Select Model:</label>
+            <select id="model_type" name="model_type">
+                <option value="asl">ASL</option>
+                <option value="gesture">Gesture</option>
+            </select>
+            <br><br>
+        </div>
+
+        <!-- Camera Feed Section -->
+        <div id="video-container">
+            <video id="video-feed" width="640" height="480" autoplay></video>
+            <button id="start-prediction" type="button">Start Prediction</button>
+        </div>
+
+        <!-- Prediction Result -->
+        <div id="predictionResult">
+            <h2>Prediction: </h2>
+            <p id="prediction"></p>
+        </div>
+    </div>
+
+    <script>
+        const videoFeed = document.getElementById('video-feed');
+        const startPredictionButton = document.getElementById('start-prediction');
+        const predictionElement = document.getElementById('prediction');
+        const modelSelection = document.getElementById('model_type');
+    
+        let cameraStream;
+
+        // Start camera stream
+        function startCamera() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    videoFeed.srcObject = stream;
+                    cameraStream = stream;
+                })
+                .catch(function(error) {
+                    console.error('Error accessing camera:', error);
+                    predictionElement.textContent = 'Unable to access the camera.';
+                });
+        }
+
+        // Capture frame and send it for prediction
+        function captureFrameAndPredict() {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = videoFeed.videoWidth;
+            canvas.height = videoFeed.videoHeight;
+    
+            // Draw the current frame from video feed
+            context.drawImage(videoFeed, 0, 0, canvas.width, canvas.height);
+    
+            // Convert the frame to an image data URL
+            const imgDataUrl = canvas.toDataURL('image/jpeg');
+    
+            // Send the captured image to the server for prediction
+            const formData = new FormData();
+            formData.append('model_type', modelSelection.value); // Dynamically use the selected model type
+            formData.append('file', dataURLtoFile(imgDataUrl, 'live_frame.jpg'));
+    
+            // Send to Flask backend
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.prediction) {
+                    predictionElement.textContent = data.prediction;
+                } else {
+                    predictionElement.textContent = 'Error: ' + data.error;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                predictionElement.textContent = 'Error occurred during prediction';
+            });
+        }
+
+        // Utility function to convert data URL to a File object
+        function dataURLtoFile(dataUrl, fileName) {
+            const arr = dataUrl.split(',');
+            const mime = arr[0].match(/:(.*?);/)[1];
+            const bstr = atob(arr[1]);
+            let n = bstr.length;
+            const u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            return new File([u8arr], fileName, { type: mime });
+        }
+
+        // Event listeners
+        startPredictionButton.addEventListener('click', function() {
+            captureFrameAndPredict();
+        });
+
+        // Start camera when the page loads
+        startCamera();
+    </script>
+</body>
+</html>
