@@ -38,15 +38,15 @@ This project aims to create a **Real-Time Communication System** that leverages 
 -  Model saved as .h5 file for deployment.
 
 ## 🎯 Use Case
--Individuals with speech or hearing disabilities
--Educational institutions and special schools
--Smart accessibility tools in hospitals or public spaces
+- Individuals with speech or hearing disabilities
+- Educational institutions and special schools
+- Smart accessibility tools in hospitals or public spaces
 
 ## 📈 Future Enhancements
--Add voice command-to-gesture translation
--Integrate with wearable devices
--Improve gesture vocabulary with dynamic learning
--Support for multiple regional languages
+- Add voice command-to-gesture translation
+- Integrate with wearable devices
+- Improve gesture vocabulary with dynamic learning
+- Support for multiple regional languages
 
 
 
