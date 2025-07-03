@@ -1,10 +1,4 @@
 # Real-Time-Communication-System-Powered-By-AI
-Here’s a professional and informative `README.md` file for your project **“Real-Time Communication System Powered by AI for Specially Abled”** that you can include in your GitHub repository or project submission:
-
----
-
-````markdown
-# Real-Time Communication System Powered by AI for Specially Abled
 
 ## 📌 Project Overview
 
