@@ -32,7 +32,6 @@ This project aims to create a **Real-Time Communication System** that leverages 
 - The dataset is structured into folders labeled by gesture name.
 - Preprocessed and augmented to enhance model accuracy.
 
-
 ## 🚀 How to Run the Project
 
 1. **Clone the repository**
@@ -59,38 +58,12 @@ This project aims to create a **Real-Time Communication System** that leverages 
    python app.py
    ```
 
+
 ## 🧪 Model Training
 
 * CNN-based architecture used for classifying hand gestures.
 * Achieved high accuracy with augmented data and optimized layers.
 * Model saved as `.h5` file for deployment.
-
-## ⚙️ How It Works
-
-The **Real-Time Communication System Powered by AI** enables specially-abled individuals to communicate using hand gestures, which are recognized by an AI model and converted into text or speech in real-time.
-
-### 🔁 Workflow:
-
-1. **🎥 Video Capture**
-   - A webcam captures live hand gestures from the user.
-   - The video feed is processed frame-by-frame using OpenCV.
-
-2. **🧠 Gesture Recognition**
-   - Each frame is passed to a Convolutional Neural Network (CNN) trained on a labeled gesture dataset.
-   - The model classifies the gesture into one of the predefined categories (e.g., "Hello", "Yes", "No").
-
-3. **📝 Display Output**
-   - The predicted gesture is mapped to a corresponding word or phrase.
-   - This text is displayed on the user interface for visual confirmation.
-
-4. **🔊 Speech Generation**
-   - The output text is passed to a Text-to-Speech (TTS) engine like `pyttsx3` or `gTTS`.
-   - The system plays the generated audio to "speak" the user's gesture.
-
-### 📌 Example:
-- A user shows the gesture for “Thank You”.
-- The model recognizes it, displays **“Thank You”** on the screen, and speaks it aloud.
-
 
 ## 🎯 Use Case
 
