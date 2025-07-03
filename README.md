@@ -69,6 +69,15 @@ This project aims to create a **Real-Time Communication System** that leverages 
    - The system plays the generated audio to "speak" the user's gesture.
 
 ### **OUTPUT**
+![Gesture Recognition Demo](output/home page.png)
+![Gesture Recognition Demo](output/choice page.png)
+![Gesture Recognition Demo](output/speech to text page.png)
+![Gesture Recognition Demo](output/sign chice page.png)
+![Gesture Recognition Demo](output/file upload page.png)
 ![Gesture Recognition Demo](output/a.png)
+![Gesture Recognition Demo](output/n.png)
+![Gesture Recognition Demo](output/bye.png)
+![Gesture Recognition Demo](output/dislike.png)
+
 
 
