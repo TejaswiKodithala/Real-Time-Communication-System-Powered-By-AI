@@ -34,12 +34,6 @@ This project aims to create a **Real-Time Communication System** that leverages 
 
 Here’s the **"How It Works"** section formatted for your `README.md` file:
 
----
-
-```markdown
-## ⚙️ How It Works
-
-The **Real-Time Communication System Powered by AI** enables specially-abled individuals to communicate using hand gestures, which are recognized by an AI model and converted into text or speech in real-time.
 
 ### 🔁 Workflow:
 
@@ -62,15 +56,5 @@ The **Real-Time Communication System Powered by AI** enables specially-abled ind
 ### 📌 Example:
 - A user shows the gesture for “Thank You”.
 - The model recognizes it, displays **“Thank You”** on the screen, and speaks it aloud.
-
----
-
-This AI-powered communication loop helps bridge the gap between specially-abled individuals and society using accessible, real-time technology.
-```
-
----
-
-Would you also like this as part of a **project report PDF** or **poster presentation content**?
-
 
 
