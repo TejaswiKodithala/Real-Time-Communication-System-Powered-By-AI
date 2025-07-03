@@ -32,7 +32,22 @@ This project aims to create a **Real-Time Communication System** that leverages 
 - The dataset is structured into folders labeled by gesture name.
 - Preprocessed and augmented to enhance model accuracy.
 
-Here’s the **"How It Works"** section formatted for your `README.md` file:
+## 🧪 Model Training
+-CNN-based architecture used for classifying hand gestures.
+-Achieved high accuracy with augmented data and optimized layers.
+-Model saved as .h5 file for deployment.
+
+## 🎯 Use Case
+-Individuals with speech or hearing disabilities
+-Educational institutions and special schools
+-Smart accessibility tools in hospitals or public spaces
+
+## 📈 Future Enhancements
+-Add voice command-to-gesture translation
+-Integrate with wearable devices
+-Improve gesture vocabulary with dynamic learning
+-Support for multiple regional languages
+
 
 
 ### 🔁 Workflow:
