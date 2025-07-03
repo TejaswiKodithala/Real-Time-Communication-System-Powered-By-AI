@@ -34,6 +34,7 @@ This project aims to create a **Real-Time Communication System** that leverages 
 
 ## 🧪 Model Training
 -CNN-based architecture used for classifying hand gestures.
+
 -Achieved high accuracy with augmented data and optimized layers.
 -Model saved as .h5 file for deployment.
 
