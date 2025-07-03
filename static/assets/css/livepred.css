@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.header {
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: transparent; /* No background color */
+  display: flex;
+  align-items: center;
+  gap: 75%;
+  margin-top: 10px;
+}
+
+/* Site Name (MAST) */
+.header .sitename {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #fff; /* Black text color for MAST */
+  margin: 0;
+  margin-left: 10%;
+}
+.sitename:hover {
+  color: #007bff; /* Changes color to blue on hover */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+      gap: 70%;
+      flex-direction: row;
+  }
+
+  .header .sitename {
+      margin-left: 10%;
+      font-size: 1.5em;
+  }
+
+}
+
+.container {
+  border-radius: 10px;
+  padding: 40px;
+  width: 800px;
+  height: 750px;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.back-btn i {
+  margin-right: 8px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+select, input[type="file"] {
+  padding: 8px;
+  width: 50%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#video-container {
+  margin-bottom: 20px;
+}
+
+#video-feed {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#predictionResult {
+  margin-top: 20px;
+}
+
+#prediction {
+  font-weight: bold;
+  font-size: 1.2em;
+}
