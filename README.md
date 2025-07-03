@@ -33,7 +33,7 @@ This project aims to create a **Real-Time Communication System** that leverages 
 - Preprocessed and augmented to enhance model accuracy.
 
 ## 🧪 Model Training
-CNN-based architecture used for classifying hand gestures.
+- CNN-based architecture used for classifying hand gestures.
 Achieved high accuracy with augmented data and optimized layers.
 Model saved as .h5 file for deployment.
 
