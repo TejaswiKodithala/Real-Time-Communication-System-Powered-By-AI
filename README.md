@@ -51,9 +51,6 @@ This project aims to create a **Real-Time Communication System** that leverages 
 
 
 ### 🔁 Workflow:
-Simultaneously, it speaks out “Thank You” via speakers.
-
-
 
 1. **🎥 Video Capture**
    - A webcam captures live hand gestures from the user.
